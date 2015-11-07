@@ -1,0 +1,11 @@
+{
+  "name": "weberia",
+  "version": "1.0.0",
+  "description": "A framework for pragmatic web systems",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec"
+  },
+  "author": "bpdp",
+  "license": "ISC"
+}
