@@ -1,5 +1,5 @@
-weberiajs
-=========
+weberia
+=======
 
 ![Logo](images/logo-weberia.png)
 
