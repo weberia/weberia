@@ -1,6 +1,8 @@
 weberiajs
 =========
 
+![Logo](images/logo-weberia.png)
+
 Welcome to weberiajs. What's that?, you ask. Well,
 
 > I'm an idealist. I don't know where I'm going, but I'm on my way.<br/>
