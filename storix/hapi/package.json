@@ -1,0 +1,22 @@
+{
+  "name": "semantix-showcase",
+  "version": "1.0.0",
+  "description": "A showcase for semantix plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/weberia"
+  },
+  "keywords": [
+    "Semantic",
+    "json-ld"
+  ],
+  "author": "Bambang Purnomosidi D. P.",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "hapi": "^11.1.4"
+  }
+}

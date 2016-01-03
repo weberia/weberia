@@ -1,7 +1,7 @@
 {
-  "name": "weberia",
+  "name": "semantix",
   "version": "0.9.1",
-  "description": "A framework for pragmatic web systems",
+  "description": "A Hapi plugin for semantic contents manager",
   "author": "bpdp",
   "license": "MIT",
   "main": "lib/index.js",
@@ -9,6 +9,6 @@
     "test": "mocha spec"
   },
   "peerDependencies": {
-    "hapi": "^11.1.4"
+    "hapi": "^11.1.x"
   }
 }
