@@ -1,12 +1,15 @@
-weberia
-=======
+Weberia Framework
+=================
 
 ![Logo](images/logo-weberia.png)
 
-Welcome to weberia. What's that?, you ask. Well,
+Weberia framework provides components for building pragmatic web systems. As such, it consists of some independent plugins on top of [http://www.hapijs.com](Hapi), integrated with microservices architecture. This pool of components are used as a reference implementation of pragmatic web systems reference architecture (more on this later). Minimnally, the software framework consists of these components:
 
-> I'm an idealist. I don't know where I'm going, but I'm on my way.<br/>
-> -- Carl Sandburg
+* Semantic contents management (implemented as [Semantix](semantix/) component).
+* Illocutionary force and propositional contents interpreter (implemented as [Speax](speax/) component).
+* Rule and business logic engine (implemented as [Rlogix](rlogix/) component).
+* Data store (implemented on top of ArangoDB as Foxx application, [Storix](storix/) component).
+* Collaborative tools based on goal-oriented discourses between human-to-human as the members of collaborative sessions (implemented as [Collabox](collabox/) component).
 
 ## Documentation
 
