@@ -5,10 +5,14 @@
   "author": "bpdp",
   "license": "MIT",
   "main": "lib/index.js",
+  "repository": "http://github.com/weberia/weberia/semantix",
   "scripts": {
     "test": "mocha spec"
   },
   "peerDependencies": {
     "hapi": "^11.1.x"
+  },
+  "dependencies": {
+    "jsonld": "^0.4.2"
   }
 }
