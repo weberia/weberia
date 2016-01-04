@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi');
+//const Semantix = require('semantix');
 
 const server = new Hapi.Server();
 
@@ -16,6 +17,7 @@ server.route({
   }
 });
 
+/*
 server.register({
   register: Semantix,
   options: {
@@ -36,4 +38,18 @@ server.register({
     server.log('info', 'Server running at: ' + server.info.uri);
   });
 });
+*/
+
+server.register({ register: require('semantix') }, {
+  routes: {
+    prefix: '/semantix'
+  }
+}, (err) => {
+  console.log(err);
+});
+
+server.start(() => {
+  server.log('info', 'Server running at: ' + server.info.uri);
+});
+
 

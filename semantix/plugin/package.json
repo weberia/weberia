@@ -13,6 +13,7 @@
     "hapi": "^11.1.x"
   },
   "dependencies": {
+    "joi": "^7.1.0",
     "jsonld": "^0.4.2"
   }
 }
