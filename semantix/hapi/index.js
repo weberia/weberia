@@ -16,6 +16,24 @@ server.route({
   }
 });
 
-server.start(() => {
-  console.log('Server running at:', server.info.uri);
+server.register({
+  register: Semantix,
+  options: {
+    reporters: [{
+      reporter: require('semantix'),
+      events: {
+        response: '*',
+        log: '*'
+      }
+    }]
+  }
+}, (err) => {
+  if (err) {
+    throw err; // something bad happened loading the plugin
+  }
+
+  server.start(() => {
+    server.log('info', 'Server running at: ' + server.info.uri);
+  });
 });
+

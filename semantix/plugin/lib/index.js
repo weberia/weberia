@@ -1,11 +1,7 @@
+var routes = require('./routes');
+
 exports.register = function (server, options, next) {
-  server.route({
-    method: 'GET',
-    path: '/test',
-    handler: function (request, reply) {
-      reply('test passed');
-    }
-  });
+  server.route(routes(options))
   next();
 };
 
