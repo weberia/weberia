@@ -1,7 +1,7 @@
 Weberia - Semantix
 ==================
 
-![Logo](images/logo-semantix.png)
+![Logo](public/images/logo-semantix.png)
 
 Weberia **Semantix** is a component of Weberia framework which can be used as semantic contents management. It can be used outside Weberia as Hapi plugin.
 

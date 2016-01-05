@@ -1,7 +1,7 @@
 Weberia - Rlogix
 ================
 
-![Logo](images/logo-rlogix.png)
+![Logo](public/images/logo-rlogix.png)
 
 Weberia **Rlogix** is a part of Weberia framework. This component is used as reasoning and logic engine for Weberia. It can be used outside Weberia as Hapi plugin. Its main role is rule and business logic engine.
 

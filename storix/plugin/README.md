@@ -1,7 +1,7 @@
 Weberia - Storix
 ================
 
-![Logo](images/logo-storix.png)
+![Logo](public/images/logo-storix.png)
 
 Weberia **Storix** is a component in Weberia framework for data store it is implemented on top of ArangoDB as Foxx application.
 

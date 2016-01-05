@@ -1,7 +1,7 @@
 Weberia - Speax
 ===============
 
-![Logo](images/logo-speax.png)
+![Logo](public/images/logo-speax.png)
 
 Weberia **Speax** is a component for illocutionary force and propositional contents interpreter for Weberia framework. It can be used outside Weberia as Hapi plugin.
 
