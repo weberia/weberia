@@ -1,7 +1,7 @@
 {
-  "name": "semantix-showcase",
+  "name": "collabox-showcase",
   "version": "1.0.0",
-  "description": "A showcase for semantix plugin",
+  "description": "A showcase for collabox plugin",
   "main": "index.js",
   "scripts": {
     "test": "mocha spec"
@@ -11,12 +11,15 @@
     "url": "http://github.com/weberia"
   },
   "keywords": [
-    "Semantic",
+    "Collaboration",
+    "Pragmatic",
+    "Goal-oriented",
+    "Discourses",
     "json-ld"
   ],
   "author": "Bambang Purnomosidi D. P.",
   "license": "Apache-2.0",
   "dependencies": {
-    "hapi": "^11.1.4"
+    "hapi": "^12.x.x"
   }
 }

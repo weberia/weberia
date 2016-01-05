@@ -1,14 +1,14 @@
 {
-  "name": "semantix-showcase",
+  "name": "speax-showcase",
   "version": "1.0.0",
-  "description": "A showcase for semantix plugin",
+  "description": "A showcase for speax plugin",
   "main": "index.js",
   "scripts": {
     "test": "mocha spec"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/weberia"
+    "url": "http://github.com/weberia/weberia/speax"
   },
   "keywords": [
     "Semantic",
@@ -17,6 +17,6 @@
   "author": "Bambang Purnomosidi D. P.",
   "license": "Apache-2.0",
   "dependencies": {
-    "hapi": "^11.1.4"
+    "hapi": "^12.x.x"
   }
 }

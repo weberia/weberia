@@ -1,8 +1,6 @@
 'use strict';
 
 const Hapi = require('hapi');
-//const Semantix = require('semantix');
-
 const server = new Hapi.Server();
 
 server.connection({ port: 3000 });
@@ -17,39 +15,17 @@ server.route({
   }
 });
 
-/*
-server.register({
-  register: Semantix,
-  options: {
-    reporters: [{
-      reporter: require('semantix'),
-      events: {
-        response: '*',
-        log: '*'
-      }
-    }]
-  }
-}, (err) => {
-  if (err) {
-    throw err; // something bad happened loading the plugin
-  }
-
-  server.start(() => {
-    server.log('info', 'Server running at: ' + server.info.uri);
-  });
-});
-*/
-
 server.register({ register: require('semantix') }, {
   routes: {
     prefix: '/semantix'
   }
 }, (err) => {
-  console.log(err);
+  server.log(err);
 });
 
-server.start(() => {
-  server.log('info', 'Server running at: ' + server.info.uri);
+server.start((err) => {
+    if (err) {
+        throw err;
+    }
+    server.log('Server running at:', server.info.uri);
 });
-
-

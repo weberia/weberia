@@ -1,7 +1,6 @@
 'use strict';
 
 const Hapi = require('hapi');
-
 const server = new Hapi.Server();
 
 server.connection({ port: 3000 });
@@ -16,6 +15,17 @@ server.route({
   }
 });
 
-server.start(() => {
-  console.log('Server running at:', server.info.uri);
+server.register({ register: require('speax') }, {
+  routes: {
+    prefix: '/speax'
+  }
+}, (err) => {
+  server.log(err);
+});
+
+server.start((err) => {
+    if (err) {
+        throw err;
+    }
+    server.log('Server running at:', server.info.uri);
 });
