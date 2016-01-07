@@ -10,7 +10,7 @@ server.route({
   path: '/',
   handler: function (request, reply) {
     var string 
-    reply('Hello, this is "collabox" show case.<br />' +
+    reply('Hello, this is <a href="/collabox">Collabox</a> show case.<br />' +
       'I live only to test the plugin');
   }
 });

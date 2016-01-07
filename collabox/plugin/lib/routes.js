@@ -42,7 +42,13 @@ function getProduct(request, reply) {
         return p.id == request.params.id;
     }).pop();
 
-    reply(product);
+    //reply(product);
+    
+    reply.view('common/index', {
+      title: 'from handlebars',
+      message: product.name
+    });
+
 }
 
 /*
