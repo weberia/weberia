@@ -13,9 +13,8 @@
     "hapi": "^12.x.x"
   },
   "dependencies": {
-    "hapi": "^12.0.0",
     "joi": "^7.1.0",
-    "jsonld": "^0.4.3",
+    "jsonld": "^0.4.4",
     "node-config": "0.0.2"
   }
 }
