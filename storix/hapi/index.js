@@ -2,6 +2,7 @@
 
 const Hapi = require('hapi');
 const server = new Hapi.Server();
+var Storix = require('storix');
 
 server.connection({ port: 3000 });
 
@@ -15,13 +16,9 @@ server.route({
   }
 });
 
-server.register({ register: require('storix') }, {
-  routes: {
-    prefix: '/storix'
-  }
-}, (err) => {
-  server.log(err);
-});
+const storix = new Storix();
+
+console.log(storix.getProduct(1));
 
 server.start((err) => {
     if (err) {
