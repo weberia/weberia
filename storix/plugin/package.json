@@ -13,8 +13,8 @@
     "hapi": "^12.x.x"
   },
   "dependencies": {
-    "arangojs": "^4.2.1",
     "joi": "^7.1.0",
-    "jsonld": "^0.4.4"
+    "jsonld": "^0.4.4",
+    "rethinkdb": "^2.2.1"
   }
 }

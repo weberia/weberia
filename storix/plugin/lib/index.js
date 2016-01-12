@@ -1,55 +1,39 @@
-'use strict';
+var rethink = require('rethinkdb')
 
-var arangojs = require('arangojs')()
+exports.register = function (plugin, opts, next) {
+  opts = opts || {}
+  if (!opts.url) {
+    opts.port = opts.port || 28015
+    opts.host = opts.host || 'localhost'
+    opts.db = opts.db || 'test'
+  } else {
+    var url = require('url').parse(opts.url)
+    opts.port = parseInt(url.port, 10) || 28015
+    opts.host = url.hostname || 'localhost'
+    opts.db = url.pathname ? url.pathname.replace(/^\//, '') : 'test'
 
-exports.register = function (plugin, options, next) {
-
-  console.log('connecting to ' + options.dbName)
-  arangojs.useDatabase(options.dbName);
-  plugin.expose('connection', arangojs)
-
-  /* possible arango json result from above:
-   
-  {
-    "_connection":{
-      "config":{
-        "url":"http://localhost:8529",
-        "arangoVersion":20300,
-        "agentOptions":{
-          "maxSockets":3,
-          "keepAlive":true,
-          "keepAliveMsecs":1000
-        },
-        "headers":{
-          "x-arango-version":20300
-        }
-      }
-    },
-    "_api":{
-      "_connection":{
-        "config":{
-          "url":"http://localhost:8529",
-          "arangoVersion":20300,
-          "agentOptions":{
-            "maxSockets":3,
-            "keepAlive":true,
-            "keepAliveMsecs":1000
-          },
-          "headers":{
-            "x-arango-version":20300
-          }
-        }
-      },
-      "_path":"_api"
-    }
-   "name":"_system"
+    if (url.auth)
+      opts.authKey = url.auth.split(':')[1]
   }
 
-  */
+  rethink.connect(opts, function (err, conn) {
+    if (err) {
+      plugin.log(['hapi-rethinkdb', 'error'], err.message)
+      console.error(err)
+      return next(err)
+    }
 
-  plugin.log(['storix', 'info'], 'ArangoDB connection established')
-  return next()
+    plugin.expose('connection', conn)
+    plugin.expose('library', rethink)
+    plugin.expose('rethinkdb', rethink)
+    plugin.bind({
+      rethinkdbConn: conn,
+      rethinkdb: rethink
+    })
 
+    plugin.log(['hapi-rethinkdb', 'info'], 'RethinkDB connection established')
+    return next()
+  })
 }
 
 exports.register.attributes = {
