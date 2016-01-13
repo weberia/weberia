@@ -1,4 +1,4 @@
-var rethink = require('rethinkdb')
+var Storix = require('rethinkdb')
 
 exports.register = function (plugin, opts, next) {
   opts = opts || {}
@@ -16,24 +16,25 @@ exports.register = function (plugin, opts, next) {
       opts.authKey = url.auth.split(':')[1]
   }
 
-  rethink.connect(opts, function (err, conn) {
+  Storix.connect(opts, function (err, conn) {
     if (err) {
-      plugin.log(['hapi-rethinkdb', 'error'], err.message)
+      plugin.log(['storix', 'error'], err.message)
       console.error(err)
       return next(err)
     }
 
     plugin.expose('connection', conn)
-    plugin.expose('library', rethink)
-    plugin.expose('rethinkdb', rethink)
+    plugin.expose('library', Storix)
+    plugin.expose('rethinkdb', Storix)
     plugin.bind({
       rethinkdbConn: conn,
-      rethinkdb: rethink
-    })
+      rethinkdb: Storix
+    });
 
-    plugin.log(['hapi-rethinkdb', 'info'], 'RethinkDB connection established')
-    return next()
+    plugin.log(['storix', 'info'], 'RethinkDB connection established');
+    //return next();
   })
+  return next();
 }
 
 exports.register.attributes = {

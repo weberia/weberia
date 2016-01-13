@@ -4,8 +4,10 @@ const Hapi = require('hapi');
 const server = new Hapi.Server();
 
 server.register({
-  register: require('storix'),
-  options: { dbName: 'storix' }
+  //register: require('storix'),
+  register: require('storix')
+  //opts: { url: 'rethinkdb://localhost:28015/test' }
+  //options: { dbName: 'storix' }
 }, function (err) {
   if (err) console.error(err);
 });
@@ -16,9 +18,9 @@ server.route({
   method: 'GET',
   path: '/',
   handler: function (request, reply) {
+    var r = request.server.plugins['storix'].rethinkdb;
     var conn = request.server.plugins['storix'].connection;
-    var collection = conn.collection('asemiks');
-    reply(conn._connection.config.url);
+    reply(r.dbList().run(conn));
   }
 });
 
