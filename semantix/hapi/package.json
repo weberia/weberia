@@ -12,11 +12,12 @@
   },
   "keywords": [
     "Semantic",
-    "json-ld"
+    "json-ld",
+    "Linked data"
   ],
   "author": "Bambang Purnomosidi D. P.",
   "license": "Apache-2.0",
   "dependencies": {
-    "hapi": "^12.x.x"
+    "hapi": "^13.x.x"
   }
 }

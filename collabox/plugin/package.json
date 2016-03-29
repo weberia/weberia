@@ -10,7 +10,7 @@
     "test": "mocha spec"
   },
   "peerDependencies": {
-    "hapi": "^12.x.x"
+    "hapi": "^13.x.x"
   },
   "dependencies": {
     "handlebars": "^4.0.5",

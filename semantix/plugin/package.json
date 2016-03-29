@@ -10,11 +10,11 @@
     "test": "mocha spec"
   },
   "peerDependencies": {
-    "hapi": "^12.x.x"
+    "hapi": "^13.x.x"
   },
   "dependencies": {
-    "joi": "^7.1.0",
-    "jsonld": "^0.4.4",
-    "node-config": "0.0.2"
+    "joi": "^8.0.x",
+    "jsonld": "^0.4.x",
+    "config": "1.19.x"
   }
 }
