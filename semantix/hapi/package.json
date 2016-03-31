@@ -18,6 +18,7 @@
   "author": "Bambang Purnomosidi D. P.",
   "license": "Apache-2.0",
   "dependencies": {
-    "hapi": "^13.x.x"
+    "hapi": "*",
+    "semantix": "file:node_modules/semantix"
   }
 }

@@ -10,10 +10,10 @@
     "test": "mocha spec"
   },
   "peerDependencies": {
-    "hapi": "^12.x.x"
+    "hapi": "*"
   },
   "dependencies": {
-    "joi": "^7.1.0",
-    "jsonld": "^0.4.4"
+    "joi": "*",
+    "jsonld": "*"
   }
 }

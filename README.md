@@ -11,6 +11,15 @@ Weberia framework provides components for building pragmatic web systems. As suc
 * Data store (implemented on top of ArangoDB as Foxx application, [Storix](storix/) component).
 * Collaborative tools based on goal-oriented discourses between human-to-human as the members of collaborative sessions (implemented as [Collabox](collabox/) component).
 
+## Directory Structure
+
+Inside every component, there are two directories:
+* hapi
+* plugin
+Directory `hapi` is used to showcase each component in a Hapi.js application, while `plugin` is used to store component source code (the Hapi.js plugin).
+
+All of Weberia components track latest version of their dependencies. The showchase (`hapi` dir) uses latest Hapi.js (in package.json: dependencies hapi always use latest version). In component source code (`plugin`), latest Hapi.js version is used as `peerDependencies` in package.json. Unfortunately, npm still consider this as ERR UNMET DEPENDENCIES. This error can be removed using `npm install hapi` but still generate ERR-extraneous package (considered as installed in node_modules but not in package.json). Both are ok, actually.
+
 ## Documentation
 
 See [documentation](http://github.com/weberia/documentation)
