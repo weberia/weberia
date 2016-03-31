@@ -1,11 +1,11 @@
 {
-  "name": "semantix",
+  "name": "rlogix",
   "version": "0.9.1",
-  "description": "A Hapi plugin for semantic contents manager",
+  "description": "A Hapi plugin for rule engine and business logic",
   "author": "bpdp",
   "license": "MIT",
   "main": "lib/index.js",
-  "repository": "http://github.com/weberia/weberia/semantix",
+  "repository": "http://github.com/weberia/weberia/rlogix",
   "scripts": {
     "test": "mocha spec"
   },

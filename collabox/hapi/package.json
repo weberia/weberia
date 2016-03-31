@@ -21,6 +21,6 @@
   "license": "Apache-2.0",
   "dependencies": {
     "hapi": "*",
-    "collabox": "file:node_modules/collabox"
+    "collabox": "file:../plugin"
   }
 }
