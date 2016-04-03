@@ -5,8 +5,13 @@ const server = new Hapi.Server();
 
 server.register({
   //register: require('storix'),
-  register: require('storix')
-  //opts: { url: 'rethinkdb://localhost:28015/test' }
+  register: require('storix'),
+  options: {
+    host: 'archera',
+    port: 28015,
+    db: 'bookstera'
+  }
+  //opts: { url: 'rethinkdb://localhost:28015/bookstera' }
   //options: { dbName: 'storix' }
 }, function (err) {
   if (err) console.error(err);
@@ -25,7 +30,19 @@ server.route({
     var r = server.plugins['storix'].rethinkdb;
     var conn = server.plugins['storix'].connection;
     //
-    reply(r.dbList().run(conn));
+
+    //reply(r.dbList().run(conn))
+    //reply(r.db('rethinkdb').table('server_config').run(conn))
+
+    r.db('rethinkdb').table('server_config').run(conn, function(err, result) {
+        if (err) {
+          reply('error');
+        } else {
+          reply(result.toArray());
+        }
+    })
+
+
   }
 });
 
